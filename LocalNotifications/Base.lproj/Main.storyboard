@@ -1,24 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocalNotifications" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total time: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq7-VO-dIK">
+                                <rect key="frame" x="20" y="118" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 hours, 5 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-sU-Aco">
+                                <rect key="frame" x="20" y="158.5" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minute timer set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-1K-xDQ">
+                                <rect key="frame" x="20" y="225" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gzr-TE-I6x">
+                                <rect key="frame" x="10" y="349" width="394" height="300"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moy-j1-aEO">
+                                        <rect key="frame" x="37" y="0.0" width="320" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="mAb-li-bMo"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working Until: 10:57 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1z-5z-Gnr">
+                                        <rect key="frame" x="10" y="160" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WbJ-FC-IqV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working Until: 10:57 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9w-0h-NjM">
+                                        <rect key="frame" x="100.5" y="170" width="193.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="G0J-V5-cgW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95q-mN-pay">
+                                        <rect key="frame" x="112" y="250" width="170" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="abN-9z-cCG"/>
+                                            <constraint firstAttribute="width" constant="170" id="fAo-zH-ef0"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Start Timer" cornerStyle="capsule">
+                                            <color key="baseBackgroundColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="0.73469387760000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startTimerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHd-LS-OVj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="V1z-5z-Gnr" firstAttribute="leading" secondItem="Gzr-TE-I6x" secondAttribute="leading" constant="10" id="5tL-Fo-RkC"/>
+                                    <constraint firstAttribute="trailing" secondItem="V1z-5z-Gnr" secondAttribute="trailing" constant="10" id="8ht-qG-n0M"/>
+                                </constraints>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP4-s6-SeA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="jCv-o9-skV">
+                                        <color key="tintColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="0.73469387760000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="BYZ-38-t0r" id="aEw-sv-AK9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="e9C-eR-o7d"/>
+                                    <barButtonItem title="Item" image="list.dash" catalog="system" id="KGF-sE-k6a">
+                                        <color key="tintColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="0.73469387760000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="showDetailsButton:" destination="BYZ-38-t0r" id="L87-GB-abm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r4o-0a-NKw"/>
+                                    <barButtonItem title="Item" image="plus" catalog="system" id="0Hv-BK-4RJ">
+                                        <color key="tintColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="0.73469387760000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="startNewDayButton:" destination="BYZ-38-t0r" id="ZOx-7n-PUB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eP4-s6-SeA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Vr-Ew-ziD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bLz-sU-Aco" secondAttribute="trailing" constant="20" id="G4U-Pu-CJM"/>
+                            <constraint firstItem="eP4-s6-SeA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LRC-CF-GTB"/>
+                            <constraint firstItem="eP4-s6-SeA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pja-Sz-Aq4"/>
+                            <constraint firstItem="bLz-sU-Aco" firstAttribute="top" secondItem="rq7-VO-dIK" secondAttribute="bottom" constant="20" id="YXO-HE-N6f"/>
+                            <constraint firstItem="rq7-VO-dIK" firstAttribute="top" secondItem="eP4-s6-SeA" secondAttribute="bottom" constant="30" id="Ymx-vo-5AT"/>
+                            <constraint firstItem="WXO-1K-xDQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZXZ-Rf-lxa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rq7-VO-dIK" secondAttribute="trailing" constant="20" id="e4M-D9-Zs6"/>
+                            <constraint firstItem="rq7-VO-dIK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fq6-tl-TXQ"/>
+                            <constraint firstItem="Gzr-TE-I6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="fwI-Dc-ZDj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gzr-TE-I6x" secondAttribute="trailing" constant="10" id="gIG-ff-B2B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WXO-1K-xDQ" secondAttribute="trailing" constant="20" id="hzf-MK-wJS"/>
+                            <constraint firstItem="bLz-sU-Aco" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nR6-fk-XcA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gzr-TE-I6x" secondAttribute="bottom" constant="20" id="ouj-6D-VsN"/>
+                            <constraint firstItem="Gzr-TE-I6x" firstAttribute="top" secondItem="WXO-1K-xDQ" secondAttribute="bottom" constant="100" id="pPm-eD-AcC"/>
+                            <constraint firstItem="WXO-1K-xDQ" firstAttribute="top" secondItem="bLz-sU-Aco" secondAttribute="bottom" constant="40" id="qk8-GV-x1K"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lxd-Cc-LF3">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.backward.fill" catalog="system" id="Owg-K2-YzD"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="9Dr-1J-RIg"/>
+                            <barButtonItem title="Item" image="list.dash" catalog="system" id="hS7-6l-zap"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="finishTimeLabel" destination="V1z-5z-Gnr" id="czh-EL-FMN"/>
+                        <outlet property="informationLabel" destination="WXO-1K-xDQ" id="fkx-eF-UzM"/>
+                        <outlet property="setedTimeLabel" destination="bLz-sU-Aco" id="Tza-W6-qK2"/>
+                        <outlet property="stackViewCollection" destination="Gzr-TE-I6x" id="uSb-d0-vGK"/>
+                        <outlet property="timePickerView" destination="moy-j1-aEO" id="KNw-od-eJO"/>
+                        <outlet property="totalTimeLabel" destination="rq7-VO-dIK" id="IbL-bB-dGc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
