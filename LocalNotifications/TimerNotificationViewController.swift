@@ -40,6 +40,9 @@ class TimerNotificationViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let save = (UIApplication.shared.delegate as! AppDelegate).saveContext
     
+    //MARK: Create User Notification Object
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // set the picker view delegate and data source
@@ -48,7 +51,7 @@ class TimerNotificationViewController: UIViewController {
         fetchingAllLogs()
         updateLogs()
         // set Notification Delegate
-        UNUserNotificationCenter.current().delegate = self
+        notificationCenter.delegate = self
     }
     
     //MARK: Fetching Logs From Database
@@ -63,7 +66,21 @@ class TimerNotificationViewController: UIViewController {
     
     //MARK: Start Time Action Button
     @IBAction func startTimerButton(_ sender: UIButton) {
-        self.showAlert(message: "Start \(self.times[self.selectedTime].timeName) Timer?", alertType: .startNewTimer)
+        if checkAuthorization() {
+            self.showAlert(message: "Start \(self.times[self.selectedTime].timeName) Timer?", alertType: .startNewTimer)
+        }else {
+            //Set alert Message
+            let alert = UIAlertController(title: "ERROR", message: "Please Allow Notifications From Setting", preferredStyle: .alert)
+            //Styling my aalert
+            alert.view.backgroundColor = .brown
+            alert.view.layer.cornerRadius = 10
+            alert.view.layer.borderWidth = 2
+            alert.view.layer.borderColor = UIColor.cyan.cgColor
+            //Add Action Buttons to My Alert
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {action in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)        }
     }
     
     //MARK: Tool Bar Buttons
@@ -195,6 +212,21 @@ class TimerNotificationViewController: UIViewController {
     }
     
     //MARK: Notifications Functions
+    //Function to check Notification Authorization
+    func checkAuthorization() -> Bool{
+        var check = false
+        //Create Waiting Object to wait for respond from device
+        let semasphore = DispatchSemaphore(value: 0)
+        //Check Authorization method
+        notificationCenter.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                check = true
+            }
+            semasphore.signal()
+        }
+        semasphore.wait()
+        return check
+    }
     //Function to start notification
     func startNotification(time: Double, identifier: String){
         let content = UNMutableNotificationContent()
