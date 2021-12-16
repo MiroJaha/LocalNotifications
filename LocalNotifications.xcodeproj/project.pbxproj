@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		84288CAE276A06630010D4B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84288CAD276A06630010D4B0 /* AppDelegate.swift */; };
 		84288CB0276A06630010D4B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84288CAF276A06630010D4B0 /* SceneDelegate.swift */; };
-		84288CB2276A06630010D4B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84288CB1276A06630010D4B0 /* ViewController.swift */; };
+		84288CB2276A06630010D4B0 /* TimerNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84288CB1276A06630010D4B0 /* TimerNotificationViewController.swift */; };
 		84288CB5276A06630010D4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84288CB3276A06630010D4B0 /* Main.storyboard */; };
 		84288CB8276A06630010D4B0 /* LocalNotifications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84288CB6276A06630010D4B0 /* LocalNotifications.xcdatamodeld */; };
 		84288CBA276A06640010D4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84288CB9276A06640010D4B0 /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 		84288CAA276A06630010D4B0 /* LocalNotifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84288CAD276A06630010D4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84288CAF276A06630010D4B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84288CB1276A06630010D4B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84288CB1276A06630010D4B0 /* TimerNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNotificationViewController.swift; sourceTree = "<group>"; };
 		84288CB4276A06630010D4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84288CB7276A06630010D4B0 /* LocalNotifications.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalNotifications.xcdatamodel; sourceTree = "<group>"; };
 		84288CB9276A06640010D4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			children = (
 				84288CAD276A06630010D4B0 /* AppDelegate.swift */,
 				84288CAF276A06630010D4B0 /* SceneDelegate.swift */,
-				84288CB1276A06630010D4B0 /* ViewController.swift */,
+				84288CB1276A06630010D4B0 /* TimerNotificationViewController.swift */,
 				84288CB3276A06630010D4B0 /* Main.storyboard */,
 				84288CB9276A06640010D4B0 /* Assets.xcassets */,
 				84288CBB276A06640010D4B0 /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84288CB8276A06630010D4B0 /* LocalNotifications.xcdatamodeld in Sources */,
-				84288CB2276A06630010D4B0 /* ViewController.swift in Sources */,
+				84288CB2276A06630010D4B0 /* TimerNotificationViewController.swift in Sources */,
 				84288CAE276A06630010D4B0 /* AppDelegate.swift in Sources */,
 				84288CB0276A06630010D4B0 /* SceneDelegate.swift in Sources */,
 			);

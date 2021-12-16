@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer Notification View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocalNotifications" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TimerNotificationViewController" customModule="LocalNotifications" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,14 +28,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minute timer set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-1K-xDQ">
-                                <rect key="frame" x="20" y="225" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" systemColor="systemPinkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cj9-6n-5Ns">
+                                <rect key="frame" x="20" y="225" width="374" height="0.0"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minute timer set" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXO-1K-xDQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gzr-TE-I6x">
-                                <rect key="frame" x="10" y="349" width="394" height="300"/>
+                                <rect key="frame" x="10" y="325" width="394" height="220"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moy-j1-aEO">
                                         <rect key="frame" x="37" y="0.0" width="320" height="150"/>
@@ -53,17 +58,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working Until: 10:57 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9w-0h-NjM">
-                                        <rect key="frame" x="100.5" y="170" width="193.5" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="G0J-V5-cgW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95q-mN-pay">
-                                        <rect key="frame" x="112" y="250" width="170" height="50"/>
+                                        <rect key="frame" x="112" y="170" width="170" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="abN-9z-cCG"/>
                                             <constraint firstAttribute="width" constant="170" id="fAo-zH-ef0"/>
@@ -108,26 +104,36 @@
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjp-eg-0m0">
+                                <rect key="frame" x="0.0" y="227" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gzr-TE-I6x" secondAttribute="bottom" constant="30" id="5lg-rX-gxk"/>
                             <constraint firstItem="eP4-s6-SeA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Vr-Ew-ziD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bLz-sU-Aco" secondAttribute="trailing" constant="20" id="G4U-Pu-CJM"/>
                             <constraint firstItem="eP4-s6-SeA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LRC-CF-GTB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjp-eg-0m0" secondAttribute="trailing" id="Nzh-0Y-Nb3"/>
                             <constraint firstItem="eP4-s6-SeA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Pja-Sz-Aq4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cj9-6n-5Ns" secondAttribute="trailing" constant="20" id="X8G-5o-haH"/>
+                            <constraint firstItem="jjp-eg-0m0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XxZ-yR-0pv"/>
                             <constraint firstItem="bLz-sU-Aco" firstAttribute="top" secondItem="rq7-VO-dIK" secondAttribute="bottom" constant="20" id="YXO-HE-N6f"/>
                             <constraint firstItem="rq7-VO-dIK" firstAttribute="top" secondItem="eP4-s6-SeA" secondAttribute="bottom" constant="30" id="Ymx-vo-5AT"/>
-                            <constraint firstItem="WXO-1K-xDQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZXZ-Rf-lxa"/>
+                            <constraint firstItem="jjp-eg-0m0" firstAttribute="top" secondItem="rq7-VO-dIK" secondAttribute="bottom" constant="88.5" id="boA-kk-nBP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jjp-eg-0m0" secondAttribute="bottom" constant="20" id="daN-Tl-LFA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rq7-VO-dIK" secondAttribute="trailing" constant="20" id="e4M-D9-Zs6"/>
                             <constraint firstItem="rq7-VO-dIK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fq6-tl-TXQ"/>
                             <constraint firstItem="Gzr-TE-I6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="fwI-Dc-ZDj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gzr-TE-I6x" secondAttribute="trailing" constant="10" id="gIG-ff-B2B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WXO-1K-xDQ" secondAttribute="trailing" constant="20" id="hzf-MK-wJS"/>
+                            <constraint firstItem="cj9-6n-5Ns" firstAttribute="top" secondItem="bLz-sU-Aco" secondAttribute="bottom" constant="40" id="kat-XY-MgU"/>
                             <constraint firstItem="bLz-sU-Aco" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nR6-fk-XcA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gzr-TE-I6x" secondAttribute="bottom" constant="20" id="ouj-6D-VsN"/>
-                            <constraint firstItem="Gzr-TE-I6x" firstAttribute="top" secondItem="WXO-1K-xDQ" secondAttribute="bottom" constant="100" id="pPm-eD-AcC"/>
-                            <constraint firstItem="WXO-1K-xDQ" firstAttribute="top" secondItem="bLz-sU-Aco" secondAttribute="bottom" constant="40" id="qk8-GV-x1K"/>
+                            <constraint firstItem="cj9-6n-5Ns" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xa3-mG-MFD"/>
+                            <constraint firstItem="Gzr-TE-I6x" firstAttribute="top" secondItem="cj9-6n-5Ns" secondAttribute="bottom" constant="100" id="zLx-Nw-oOJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lxd-Cc-LF3">
@@ -140,6 +146,8 @@
                     <connections>
                         <outlet property="finishTimeLabel" destination="V1z-5z-Gnr" id="czh-EL-FMN"/>
                         <outlet property="informationLabel" destination="WXO-1K-xDQ" id="fkx-eF-UzM"/>
+                        <outlet property="informationStack" destination="cj9-6n-5Ns" id="JwS-FA-EG3"/>
+                        <outlet property="logsLabel" destination="jjp-eg-0m0" id="v1t-T1-Je2"/>
                         <outlet property="setedTimeLabel" destination="bLz-sU-Aco" id="Tza-W6-qK2"/>
                         <outlet property="stackViewCollection" destination="Gzr-TE-I6x" id="uSb-d0-vGK"/>
                         <outlet property="timePickerView" destination="moy-j1-aEO" id="KNw-od-eJO"/>
@@ -157,6 +165,9 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
