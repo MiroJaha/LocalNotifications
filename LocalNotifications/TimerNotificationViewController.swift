@@ -40,9 +40,6 @@ class TimerNotificationViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let save = (UIApplication.shared.delegate as! AppDelegate).saveContext
     
-    //MARK: Create Notification Object
-    let notificationCenter = UNUserNotificationCenter.current()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // set the picker view delegate and data source
@@ -50,8 +47,8 @@ class TimerNotificationViewController: UIViewController {
         timePickerView.dataSource = self
         fetchingAllLogs()
         updateLogs()
-        // set Notification Object
-        notificationCenter.delegate = self
+        // set Notification Delegate
+        UNUserNotificationCenter.current().delegate = self
     }
     
     //MARK: Fetching Logs From Database
